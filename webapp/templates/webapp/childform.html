@@ -1,0 +1,1352 @@
+{% extends 'webapp/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+    <form method="POST" autocomplete="off">
+
+        {% csrf_token %}
+
+        <div class="container bg-light shadow-md p-5">
+        <div class = "row">
+            <div class ="col-6">
+                {{form.letterhead|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class = "row">
+            <div class ="col-4">
+                {{form.evaluationDoneVia|as_crispy_field}}
+            </div>
+
+            <div class ="col-4">
+                {{form.dateOfEvaluation|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class = "row">
+            <div class ="col-4">
+                {{form.patientName|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.dob|as_crispy_field}}
+            </div>
+
+            <div class ="col-1">
+                {{form.age|as_crispy_field}}
+            </div>
+
+            
+            <div class ="col-2">
+                {{form.sex|as_crispy_field}}
+            </div>
+        </div>
+
+        <br>
+
+        <div class = "row">
+            <div class ="col-4">
+                {{form.evaluatedBy|as_crispy_field}}
+            </div>
+            <div class = "col-4">
+                {{form.time_in|as_crispy_field}}
+            </div>
+            <div class = "col-4">
+                {{form.time_out|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+
+        <div class = "row">
+            <div class= "col-4">
+            {{form.parent|as_crispy_field}}
+            </div> 
+            <div class= "col-4">
+            {{form.maratialStatus|as_crispy_field}}
+            </div>
+            <div class= "col-4">
+            {{form.custody|as_crispy_field}}
+            </div>    
+        </div>
+        <div class = "row">
+            <div class= "col-6">
+            {{form.pos|as_crispy_field}}
+            </div>    
+        </div> 
+
+        <div class = "row">
+            <div class= "col-4">
+            {{form.schoolname|as_crispy_field}}
+            </div> 
+            <div class= "col-4">
+            {{form.grade|as_crispy_field}}
+            </div> 
+        </div>
+        <div class = "row">
+            <div class= "col-4">
+            {{form.primarycarephysicianDoc|as_crispy_field}}
+            </div> 
+            <div class= "col-2">
+            {{form.primarycarephysicianDocTelephone|as_crispy_field}}
+            </div> 
+            <div class= "col-4">
+            {{form.therapist|as_crispy_field}}
+            </div> 
+            <div class= "col-2">
+            {{form.thrapistTelephone|as_crispy_field}}
+            </div> 
+        </div>
+        <br>
+        {{form.problemList|as_crispy_field}}
+        <br>
+        {{form.historyofPresentingProblem|as_crispy_field}}
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.psychistorydate1|as_crispy_field}}
+        </div> 
+        <div class= "col-2">
+        {{form.provider|as_crispy_field}}
+        </div> 
+        <div class= "col-4">
+        {{form.type|as_crispy_field}}
+        </div> 
+        <div class= "col-2">
+        {{form.outcome|as_crispy_field}}
+        </div> 
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.psychistorydate2|as_crispy_field}}
+        </div> 
+        <div class= "col-2">
+        {{form.provider2|as_crispy_field}}
+        </div> 
+        <div class= "col-4">
+        {{form.type2|as_crispy_field}}
+        </div> 
+        <div class= "col-2">
+        {{form.outcome2|as_crispy_field}}
+        </div> 
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.psychistorydate3|as_crispy_field}}
+        </div> 
+        <div class= "col-2">
+        {{form.provider3|as_crispy_field}}
+        </div> 
+        <div class= "col-4">
+        {{form.type3|as_crispy_field}}
+        </div> 
+        <div class= "col-2">
+        {{form.outcome3|as_crispy_field}}
+        </div> 
+    </div>
+    <br>
+    <br>
+    <h5>PAST MEDICAL/SURGICAL HISTORY:</h5>
+    <br>
+    {{form.allergies|as_crispy_field}}
+
+    <br>
+    {{form.immunizations|as_crispy_field}}
+
+    <br>
+    {{form.lastphysicalexamination|as_crispy_field}}
+
+    <br>
+    {{form.historyofheadInjury|as_crispy_field}}
+
+    <br>
+    {{form.surgery|as_crispy_field}}
+
+    <br>
+    {{form.seizure|as_crispy_field}}
+
+    <br>
+    {{form.chronicillness|as_crispy_field}}
+
+    <br>
+    {{form.currentMedication|as_crispy_field}}
+
+    <br>
+    {{form.familyHistory|as_crispy_field}}
+    <br>
+    <h5>DEVELOPMENTAL HISTORY:</h5>
+    <br>
+    {{form.maternalHealth|as_crispy_field}}
+    <br>
+    {{form.prenatalPerinalPostnatalHealth|as_crispy_field}}
+    <br>
+    {{form.earlyDevelopment|as_crispy_field}}
+    <br>
+    {{form.speechLanguage|as_crispy_field}}
+    <br>
+    {{form.physicalEmotionalSexualHistory|as_crispy_field}}
+    <br>
+    {{form.soicalHistory|as_crispy_field}}
+
+    <br>
+    <h5>SCHOOL HISTORY:</h5>
+
+    <br>
+    {{form.earlySchoolingAdjustment|as_crispy_field}}
+    <br>
+    {{form.separationAnxiety|as_crispy_field}}
+    <br>
+    {{form.Socialization|as_crispy_field}}
+    <br>
+    {{form.transfer|as_crispy_field}} 
+    <br>
+    {{form.cognitiveandAcademicFunctioning|as_crispy_field}}
+
+    <br>
+    {{form.behaviorProblems|as_crispy_field}}
+
+    <br>
+    <h5>Mental Status Examination (MSE)</h5>
+    <br>
+    <div class = "row">
+        <div class= "col-md-3 ms-auto">
+        <h7>Appearance</h7>
+        </div> 
+        <div class= "col-md-3 ms-auto">
+        <h7>Eye Contact</h7>
+        </div> 
+        <div class= "col-md-3 ms-auto">
+        <h7>Build Average</h7>
+        </div>
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.appearanceWellgrommed|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.appearanceWellgroomedLevels|as_crispy_field}}
+        </div>
+        <div class= "col-md-2 ms-auto">
+        {{form.eyeCotactAverage|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.eyeCotactAverageLevels|as_crispy_field}}
+        </div> 
+        <br>
+        <div class= "col-md-2 ms-auto">
+        {{form.buildAverage|as_crispy_field}}
+        </div> 
+        <div class= "col-1">
+        {{form.buildAverageLevels|as_crispy_field}}
+        </div> 
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.appearanceUnkempt|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.appearanceUnkemptLevels|as_crispy_field}}
+        </div>
+        <div class= "col-md-2 ms-auto">
+        {{form.eyecontactAvoidant|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.eyecontactAvoidantLevels|as_crispy_field}}
+        </div> 
+        <br>
+        <div class= "col-md-2 ms-auto">
+        {{form.buildThin|as_crispy_field}}
+        </div> 
+        <div class= "col-1">
+        {{form.eyecontacbuildThinLevels|as_crispy_field}}
+        </div> 
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.appearanceDisheveled|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.appearanceDisheveledLevels|as_crispy_field}}
+        </div>
+        <div class= "col-md-2 ms-auto">
+        {{form.eyecontactIntense|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.eyecontactIntenseLevels|as_crispy_field}}
+        </div> 
+        <br>
+        <div class= "col-md-2 ms-auto">
+        {{form.buildOverweight|as_crispy_field}}
+        </div> 
+        <div class= "col-1">
+        {{form.buildOverweightLevels|as_crispy_field}}
+        </div> 
+    </div>
+    
+    <br>
+    <div class = "row">
+        <div class= "col-md-3 ms-auto">
+        <h7>Activity</h7>
+        </div> 
+        <div class= "col-md-3 ms-auto">
+        <h7>Demeanor</h7>
+        </div> 
+        <div class= "col-md-3 ms-auto">
+        <h7>Speech</h7>
+        </div>
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.activityAverage|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.activityAverageLevels|as_crispy_field}}
+        </div>
+        <div class= "col-md-2 ms-auto">
+        {{form.demeanorAverage|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.demeanorAverageLevels|as_crispy_field}}
+        </div> 
+        <br>
+        <div class= "col-md-2 ms-auto">
+        {{form.speechClear|as_crispy_field}}
+        </div> 
+        <div class= "col-1">
+        {{form.speechClearLevels|as_crispy_field}}
+        </div> 
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.activityAgitated|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.activityAgitatedLevels|as_crispy_field}}
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        {{form.demeanorHostile|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.demeanorHostileLevels|as_crispy_field}}
+        </div>
+        <br>
+        <div class= "col-md-2 ms-auto">
+        {{form.speechSlurred|as_crispy_field}}
+        </div> 
+        <div class= "col-1">
+        {{form.speechSlurredLevels|as_crispy_field}}
+        </div> 
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.activitySlowed|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.activitySlowedLevels|as_crispy_field}}
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        {{form.demeanorMistrustful|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.demeanorMistrustfulLevels|as_crispy_field}}
+        </div>
+        <br>
+        <div class= "col-md-2 ms-auto">
+        {{form.speechRapid|as_crispy_field}}
+        </div> 
+        <div class= "col-1">
+        {{form.speechRapidLevels|as_crispy_field}}
+        </div> 
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        </div>
+        <div class= "col-1">
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        {{form.demeanorWithdrawn|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.demeanorWithdrawnLevels|as_crispy_field}}
+        </div>
+        <br>
+        <div class= "col-md-2 ms-auto">
+        {{form.speechPressured|as_crispy_field}}
+        </div> 
+        <div class= "col-1">
+        {{form.speechPressuredLevels|as_crispy_field}}
+        </div> 
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        </div>
+        <div class= "col-1">
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        {{form.demeanorPreoccupied|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.demeanorPreoccupiedLevels|as_crispy_field}}
+        </div>
+        <br>
+        <div class= "col-md-2 ms-auto">
+        </div> 
+        <div class= "col-1">
+        </div> 
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        </div>
+        <div class= "col-1">
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        {{form.demeanorDemanding|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.demeanorDemandingLevels|as_crispy_field}}
+        </div>
+        <br>
+        <div class= "col-md-2 ms-auto">
+        </div> 
+        <div class= "col-1">
+        </div> 
+    </div>
+
+    <h5> Thought Content </h5>
+
+    <br>
+    <div class = "row">
+        <div class= "col-2 ms-auto">
+        <h5>Delusions</h5>
+        </div> 
+        <div class= "col-2 ms-auto">
+        <h5>Self Abuse</h5>
+        </div> 
+        <div class= "col-2 ms-auto">
+        <h5>Other</h5>
+        </div>
+        <div class= "col-2 ms-auto">
+        <h5>Aggressive</h5>
+        </div>
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2 ms-auto">
+        {{form.delusionsNoneReported|as_crispy_field}}
+        </div>
+        <div class= "col-2 ms-auto">
+        {{form.selfAbuseNonreported|as_crispy_field}}
+        </div>
+        <div class= "col-2 ms-auto">
+        {{form.otherNoneReported|as_crispy_field}}
+        </div>
+        <div class= "col-2 ms-auto">
+        {{form.aggressiveNoneReported|as_crispy_field}}
+        </div>
+    </div>
+
+    <br>
+    <div class = "row">
+        <div class= "col-1 ms-auto">
+        {{form.delusionsgrandiose|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.delusionsgrandioseLevels|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.selfAbuseSelfMutilation|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.selfAbuseSelfMutilationLevels|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.otherAutistic|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.otherAutisticLevels|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.aggressiveHomicidal|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.aggressiveHomicidalLevels|as_crispy_field}}
+        </div>
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-1 ms-auto">
+        {{form.delusionspersecutory|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.delusionspersecutoryLevels|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.selfAbuseSucidal|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.selfAbuseSucidalLevels|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.otherObsessional|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.otherObsessionalLevels|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.aggresiveIntent|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.aggresiveIntentLevels|as_crispy_field}}
+        </div>
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-1 ms-auto">
+        {{form.delusionssomatic|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.delusionssomaticLevels|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.selfAbuseIntent|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.selfAbuseIntentLevels|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.otherPhobic|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.otherPhobicLevels|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.aggressivePlan|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.aggressivePlanLevels|as_crispy_field}}
+        </div>
+    </div>
+
+    <br>
+    <div class = "row">
+        <div class= "col-1 ms-auto">
+        {{form.delusionsbizarre|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.delusionsbizarreLevels|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.selfAbusePlan|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.selfAbusePlanLevels|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.otherGuilty|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.otherGuiltyLevels|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        </div>
+        <div class= "col-1 ms-auto">
+        </div>
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-1 ms-auto">
+        {{form.delusionsnihilistic|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.delusionsnihilisticLevels|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        </div>
+        <div class= "col-1 ms-auto">
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.otherIdeasOfreference|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.otherIdeasOfreferenceLevels|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        </div>
+        <div class= "col-1 ms-auto">
+        </div>
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-1 ms-auto">
+        {{form.delusionsreligious|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.delusionsreligiouslevels|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        </div>
+        <div class= "col-1 ms-auto">
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.otherPreoccupied|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.otherPreoccupiedLevels|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        </div>
+        <div class= "col-1 ms-auto">
+        </div>
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-1 ms-auto">
+        </div>
+        <div class= "col-1 ms-auto">
+        </div>
+        <div class= "col-1 ms-auto">
+        </div>
+        <div class= "col-1 ms-auto">
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.otherGuraded|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.otherGuradedLevels|as_crispy_field}}
+        </div>
+        <div class= "col-1 ms-auto">
+        </div>
+        <div class= "col-1 ms-auto">
+        </div>
+    </div>
+
+    <br>
+    <div class = "row">
+        <div class= "col-1 ms-auto">
+        </div>
+        <div class= "col-1 ms-auto">
+        </div>
+        <div class= "col-1 ms-auto">
+        </div>
+        <div class= "col-1 ms-auto">
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.otherOption|as_crispy_field}} 
+        </div>
+        <div class= "col-1 ms-auto">
+        {{form.otherOptionText|as_crispy_field}} 
+        </div>
+        <div class= "col-1 ms-auto">
+        </div>
+        <div class= "col-1 ms-auto">
+        </div>
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-md-3 ms-auto">
+        <h5>Hallucinations</h5>
+        </div> 
+        <div class= "col-md-3 ms-auto">
+        <h5>Other</h5>
+        </div> 
+        <div class= "col-md-3 ms-auto">
+        <h5>Thought Process</h5>
+        </div>
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.hallucinationsNoneReported|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        {{form.otherPerceptionNonreported|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        </div>
+        <br>
+        <div class= "col-md-2 ms-auto">
+        {{form.thoughtProcessLogical|as_crispy_field}}
+        </div> 
+        <div class= "col-1">
+        {{form.thoughtProcessLogicalLevels|as_crispy_field}}
+        </div> 
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.hallucinationsAuditory|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.hallucinationsAuditoryLevels|as_crispy_field}}
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        {{form.otherPerceptionIllusions|as_crispy_field}} 
+        </div>
+        <div class= "col-1">
+        {{form.otherPerceptionIllusionsLevels|as_crispy_field}}
+        </div>
+        <br>
+        <div class= "col-md-2 ms-auto">
+        {{form.thoughtProcessCircumstantial|as_crispy_field}}
+        </div> 
+        <div class= "col-1">
+        {{form.thoughtProcessCircumstantialLevels|as_crispy_field}}
+        </div> 
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.hallucinationsVisual|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.hallucinationsVisualLevels|as_crispy_field}}
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        {{form.otherPerceptionDepersonalization|as_crispy_field}} 
+        </div>
+        <div class= "col-1">
+        {{form.otherPerceptionDepersonalizationLevels|as_crispy_field}}
+        </div>
+        <br>
+        <div class= "col-md-2 ms-auto">
+        {{form.thoughtProcessTangential|as_crispy_field}}
+        </div> 
+        <div class= "col-1">
+        {{form.thoughtProcessTangentialLevels|as_crispy_field}}
+        </div> 
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.hallucinationsOlfactory|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.hallucinationsOlfactoryLevels|as_crispy_field}}
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        {{form.otherPerceptionDerealization|as_crispy_field}} 
+        </div>
+        <div class= "col-1">
+        {{form.otherPerceptionDerealizationLevels|as_crispy_field}}
+        </div>
+        <br>
+        <div class= "col-md-2 ms-auto">
+        {{form.thoughtProcessLoose|as_crispy_field}}
+        </div> 
+        <div class= "col-1">
+        {{form.thoughtProcessLooseLevels|as_crispy_field}}
+        </div> 
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.hallucinationsGustatory|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.hallucinationsGustatoryLevels|as_crispy_field}}
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        </div>
+        <div class= "col-1">
+        </div>
+        <br>
+        <div class= "col-md-2 ms-auto">
+        {{form.thoughtProcessRacing|as_crispy_field}}
+        </div> 
+        <div class= "col-1">
+        {{form.thoughtProcessRacingLevels|as_crispy_field}}
+        </div> 
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.hallucinationsTactile|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.hallucinationsTactileLevels|as_crispy_field}}
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        </div>
+        <div class= "col-1">
+        </div>
+        <br>
+        <div class= "col-md-2 ms-auto">
+        {{form.thoughtProcessIncoherent|as_crispy_field}}
+        </div> 
+        <div class= "col-1">
+        {{form.thoughtProcessIncoherentLevels|as_crispy_field}}
+        </div> 
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        </div>
+        <div class= "col-1">
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        </div>
+        <div class= "col-1">
+        </div>
+        <br>
+        <div class= "col-md-2 ms-auto">
+        {{form.thoughtProcessConcrete|as_crispy_field}}
+        </div> 
+        <div class= "col-1">
+        {{form.thoughtProcessConcreteLevels|as_crispy_field}}
+        </div> 
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        </div>
+        <div class= "col-1">
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        </div>
+        <div class= "col-1">
+        </div>
+        <br>
+        <div class= "col-md-2 ms-auto">
+        {{form.thoughtProcessBlocked|as_crispy_field}}
+        </div> 
+        <div class= "col-1">
+        {{form.thoughtProcessBlockedLevels|as_crispy_field}}
+        </div> 
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        </div>
+        <div class= "col-1">
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        </div>
+        <div class= "col-1">
+        </div>
+        <br>
+        <div class= "col-md-2 ms-auto">
+        {{form.thoughtProcessFlightOfIdeas|as_crispy_field}}
+        </div> 
+        <div class= "col-1">
+        {{form.thoughtProcessFlightOfIdeasLevels|as_crispy_field}}
+        </div> 
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-md-5 ms-auto">
+        <h5>Mood</h5>
+        </div> 
+        <div class= "col-md-3 ms-auto">
+        <h5>Affect</h5>
+        </div> 
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.moodEuthymic|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.moodEuthymicLevels|as_crispy_field}}
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        {{form.affectFull|as_crispy_field}} 
+        </div>
+        <div class= "col-1">
+        {{form.affectFullLevels|as_crispy_field}}
+        </div>
+        <br>
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.moodDepressed|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.moodDepressedLevels|as_crispy_field}}
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        {{form.affectConstricted|as_crispy_field}} 
+        </div>
+        <div class= "col-1">
+        {{form.affectConstrictedLevels|as_crispy_field}}
+        </div>
+        <br>
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.moodAnxious|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.moodAnxiousLevels|as_crispy_field}}
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        {{form.affectFlat|as_crispy_field}} 
+        </div>
+        <div class= "col-1">
+        {{form.affectFlatLevels|as_crispy_field}}
+        </div>
+        <br>
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.moodAngry|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.moodAngryLevels|as_crispy_field}}
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        {{form.affectInappropriate|as_crispy_field}} 
+        </div>
+        <div class= "col-1">
+        {{form.affectInappropriateLevels|as_crispy_field}}
+        </div>
+        <br>
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.moodEuphoric|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.moodEuphoricLevels|as_crispy_field}}
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        {{form.affectLabile|as_crispy_field}} 
+        </div>
+        <div class= "col-1">
+        {{form.affectLabileLevels|as_crispy_field}}
+        </div>
+        <br>
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.moodIrritable|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.moodIrritableLevels|as_crispy_field}}
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        </div>
+        <div class= "col-1">
+        </div>
+        <br>
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-md-3 ms-auto">
+        <h5>Behavior</h5>
+        </div>
+        <div class= "col-md-3 ms-auto">
+        </div>
+        <div class= "col-md-3 ms-auto">
+        </div>   
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.behaviorCooperative|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.behaviorCooperativelevels|as_crispy_field}}
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        {{form.behaviorAssaultive|as_crispy_field}} 
+        </div>
+        <div class= "col-1">
+        {{form.behaviorAssaultiveLevels|as_crispy_field}}
+        </div>
+        <div class= "col-md-2 ms-auto">
+        {{form.behaviorAnhedonia|as_crispy_field}} 
+        </div>
+        <div class= "col-1">
+        {{form.behaviorAnhedoniaLevels|as_crispy_field}}
+        </div>
+        <br>
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.behaviorResistant|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.behaviorResistantLevels|as_crispy_field}}
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        {{form.behaviorAggresive|as_crispy_field}} 
+        </div>
+        <div class= "col-1">
+        {{form.behaviorAggresiveLevels|as_crispy_field}}
+        </div>
+        <div class= "col-md-2 ms-auto">
+        {{form.behaviorAkasthisia|as_crispy_field}} 
+        </div>
+        <div class= "col-1">
+        {{form.behaviorAkasthisiaLevels|as_crispy_field}}
+        </div>
+        <br>
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.behaviorAgitated|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.behaviorAgitatedLevels|as_crispy_field}}
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        {{form.behaviorHyperactive|as_crispy_field}} 
+        </div>
+        <div class= "col-1">
+        {{form.behaviorHyperactiveLevels|as_crispy_field}}
+        </div>
+        <div class= "col-md-2 ms-auto">
+        {{form.behaviorWithdrawn|as_crispy_field}} 
+        </div>
+        <div class= "col-1">
+        {{form.behaviorWithdrawnLevels|as_crispy_field}}
+        </div>
+        <br>
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.behaviorImpulsive|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.behaviorImpulsiveLevels|as_crispy_field}}
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        {{form.behaviorRestless|as_crispy_field}} 
+        </div>
+        <div class= "col-1">
+        {{form.behaviorRestlessLevels|as_crispy_field}}
+        </div>
+        <div class= "col-md-2 ms-auto">
+        {{form.behaviorDystonia|as_crispy_field}} 
+        </div>
+        <div class= "col-1">
+        {{form.behaviorDystoniaLevels|as_crispy_field}}
+        </div>
+        <br>
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.behaviorOverSedated|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.behaviorOverSedatedLevels|as_crispy_field}}
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        {{form.behaviorLossOfInterest|as_crispy_field}} 
+        </div>
+        <div class= "col-1">
+        {{form.behaviorLossOfInterestLevels|as_crispy_field}}
+        </div>
+        <div class= "col-md-2 ms-auto">
+        {{form.behaviorTardive|as_crispy_field}} 
+        </div>
+        <div class= "col-1">
+        {{form.behaviorTardiveLevels|as_crispy_field}}
+        </div>
+        <br>
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        <h5>Cognition</h5>
+        </div>
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        <h5>Impairment of</h5>
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        <h5> Intelligence Estimate</h5>
+        </div>
+        <br>
+        <div class= "col-md-2 ms-auto">
+        </div>
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.impairmentofNonReported|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        {{form.IntelligenceMR|as_crispy_field}} 
+        </div>
+        <div class= "col-1">
+        {{form.IntelligenceMRLevels|as_crispy_field}}
+        </div>
+        <div class= "col-md-2 ms-auto"> 
+        </div>
+        <div class= "col-1">
+        </div>
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.impairmentofOrientation|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.impairmentofOrientationLevels|as_crispy_field}}
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        {{form.IntelligenceBorderline|as_crispy_field}} 
+        </div>
+        <div class= "col-1">
+        {{form.IntelligenceBorderlineLevels|as_crispy_field}}
+        </div>
+        <div class= "col-md-2 ms-auto"> 
+        </div>
+        <div class= "col-1">
+        </div>
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.impairmentofMemory|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.impairmentofMemoryLevels|as_crispy_field}}
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        {{form.IntelligenceAverage|as_crispy_field}} 
+        </div>
+        <div class= "col-1">
+        {{form.IntelligenceAverageLevels|as_crispy_field}}
+        </div>
+        <div class= "col-md-2 ms-auto"> 
+        </div>
+        <div class= "col-1">
+        </div>
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.impairmentofAttentionConcentration|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.impairmentofAttentionConcentrationLevels|as_crispy_field}}
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        {{form.IntelligenceAboveAverage|as_crispy_field}} 
+        </div>
+        <div class= "col-1">
+        {{form.IntelligenceAboveAverageLevels|as_crispy_field}}
+        </div>
+        <div class= "col-md-2 ms-auto"> 
+        </div>
+        <div class= "col-1">
+        </div>
+    </div>
+    <br>
+    <div class = "row">
+        <div class= "col-2">
+        {{form.impairmentofAbilityToAbstract|as_crispy_field}}
+        </div>
+        <div class= "col-1">
+        {{form.impairmentofAbilityToAbstractLevels|as_crispy_field}}
+        </div> 
+        <div class= "col-md-2 ms-auto">
+        </div>
+        <div class= "col-1">
+        </div>
+        <div class= "col-md-2 ms-auto"> 
+        </div>
+        <div class= "col-1">
+        </div>
+    </div>
+    <br>
+    <div class = "row">
+        <div class=" col-2">
+        <h5> Insight/Judgement</h5>
+        </div>
+        <div class=" col-1">
+            {{form.InsightjudgementNA|as_crispy_field}}  
+        </div>
+    </div>
+    {{form.Insightjudgement|as_crispy_field}}
+    <br>
+    {{form.icdcode|as_crispy_field}}
+
+    <br>
+    {{form.dx|as_crispy_field}}
+    <br>
+    {{form.dx1|as_crispy_field}}
+    <br>
+    {{form.dx2|as_crispy_field}}
+    <br>
+    {{form.dx3|as_crispy_field}}
+    <br>
+    <h5>CPT Codes</h5>
+    <h5>Procedural Coding</h5>
+
+    <br>
+    <div class = "row">
+        <div class = "col-2">
+            <h7>CPT Code 1 :</h7>
+        </div>
+
+        <div class = "col-7">
+            {{form.cptcode1|as_crispy_field}}
+        </div>
+    </div>
+    <br>
+    <div class = "row">
+        <div class = "col-2">
+            <h7>CPT Code Other 1 :</h7>
+        </div>
+
+        <div class = "col-4">
+            {{form.cptcodeother1|as_crispy_field}}
+        </div>
+
+        <div class = "col-md-2 ms-auto">
+            <h7>Unit 1:</h7>
+        </div>
+        <div class ="col-2">
+        {{form.unit1|as_crispy_field}}
+        </div>
+    </div>
+    <br>
+    <div class ="row">
+        <div class ="col-2">
+            <h7>Modifiers 1:</h7>
+        </div>
+        <div class ="col-2">
+            {{form.modifiers1|as_crispy_field}}
+        </div>
+        <div class = "col-md-2 ms-auto">
+            <h7>Modifiers 2:</h7>
+        </div>
+        <div class ="col-2">
+        {{form.modifiers2|as_crispy_field}}
+        </div>
+    </div>
+    <br>
+    <div class ="row">
+        <div class ="col-2">
+            <h7>Modifiers Other 1:</h7>
+        </div>
+        <div class ="col-2">
+            {{form.modifiersOther1|as_crispy_field}}
+        </div>
+        <div class = "col-md-2 ms-auto">
+            <h7>Modifiers Other2:</h7>
+        </div>
+        <div class ="col-2">
+        {{form.modifiersOther2|as_crispy_field}}
+        </div>
+    </div>
+    <br>
+    <div class = "row">
+        <div class = "col-2">
+            <h7>CPT Code 2 :</h7>
+        </div>
+
+        <div class = "col-7">
+            {{form.cptcode2|as_crispy_field}}
+        </div>
+    </div>
+    <br>
+    <div class = "row">
+        <div class = "col-2">
+            <h7>CPT Code Other 2 :</h7>
+        </div>
+
+        <div class = "col-4">
+            {{form.cptcodeOther2|as_crispy_field}}
+        </div>
+
+        <div class = "col-md-2 ms-auto">
+            <h7>Unit 2:</h7>
+        </div>
+        <div class ="col-2">
+        {{form.unit2|as_crispy_field}}
+        </div>
+    </div>
+    <br>
+    <div class ="row">
+        <div class ="col-2">
+            <h7>Modifiers 1:</h7>
+        </div>
+        <div class ="col-2">
+            {{form.modefiers3|as_crispy_field}}
+        </div>
+        <div class = "col-md-2 ms-auto">
+            <h7>Modifiers 2:</h7>
+        </div>
+        <div class ="col-2">
+        {{form.modefiers4|as_crispy_field}}
+        </div>
+    </div>
+    <br>
+    <div class ="row">
+        <div class ="col-2">
+            <h7>Modifiers Other 1:</h7>
+        </div>
+        <div class ="col-2">
+            {{form.modefiersOther3|as_crispy_field}}
+        </div>
+        <div class = "col-md-2 ms-auto">
+            <h7>Modifiers Other2:</h7>
+        </div>
+        <div class ="col-2">
+        {{form.modefiersOther4|as_crispy_field}}
+        </div>
+    </div>
+    <br>
+    {{form.commentToBillers|as_crispy_field}}
+    <br>
+    {{form.commentMedical|as_crispy_field}}
+    <br>
+    {{form.commentStressors|as_crispy_field}}
+    <br>
+    {{form.commentImpressionTreatmentPlan|as_crispy_field}}
+    <br>
+    <div class ="col-2">
+    {{form.dateatheendOfForm|as_crispy_field}}
+    </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <button type="submit" class="btn btn-primary"> 
+                    
+        SUBMIT &nbsp; <i class="fa fa-check" aria-hidden="true"></i>
+
+    </button>
+
+    &nbsp;
+
+    <a href="{% url 'dashboard' %}" class="btn btn-secondary"> 
+
+
+        Return &nbsp; <i class="fa fa-arrow-left" aria-hidden="true"></i>
+
+    </a>
+
+</form>
+
+{% endblock %}

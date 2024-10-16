@@ -1,0 +1,42 @@
+{% extends 'webapp/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<a class="btn btn-outline-primary btn-sm" href="{% url 'create-record' %}">
+
+    Create a new record &nbsp; <i class="fa fa-plus-circle" aria-hidden="true"></i>
+
+</a>
+
+    <form method="POST" autocomplete="off">
+
+        {% csrf_token %}
+
+        <div class = "row">
+            <div class ="col-4">
+                {{form.first_name|as_crispy_field}}
+            </div>
+            <div class ="col-4">
+                {{form.last_name|as_crispy_field}}
+            </div>
+        </div>
+
+        <h2> Appointment Session</h2>
+        <br>
+
+        <h3> Appointment Details</h3>
+
+        
+        <strong>   
+
+            {{record.last_name|upper}}
+
+            {{record.first_name}}
+
+        </strong>
+
+
+</form>
+
+{% endblock %}

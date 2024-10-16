@@ -1,0 +1,197 @@
+{% extends 'webapp/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h3>THS Progress Note</h3>
+<form method="POST" autocomplete="off">
+
+    {% csrf_token %}
+    <div class="container bg-light shadow-md p-5">
+        <div class = "row">
+            <div class ="col-6">
+                {{form.letterhead|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class = "row">
+            <div class = "col-2">
+            {{form.dateOfAppointment|as_crispy_field}}
+            </div>    
+            <div class ="col-2">
+                {{form.time_in|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.time_out|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class = "row">
+            <div class ="col-6">
+                {{form.pos|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <h4>Diagnostic Impression</h4>
+        <br>
+        <div class = "row">
+            <div class  ="col-1">
+                <h7>Clinical Disorder:</h7>
+            </div>
+            <div class = "col-8">
+            {{form.clinicalDisorder|as_crispy_field}}
+            </div> 
+        </div>
+        <br>
+        <div class ="row">
+            <div class  ="col-1">
+                <h7>Other ICD 10 Diagnosis:</h7>
+            </div>   
+            <div class ="col-8">
+                {{form.otherICD10Diagnosis|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <h4>CPT</h4>
+        <br>
+        <h5>Billing</h5>
+        <br>
+        <div class="row">
+            <div class ="col-1">
+                <h6>CPT </h6>
+            </div>
+        </div>
+        <br>
+        <div class = "row">
+            <div class = "col-2">
+                <h7>CPT Code Other 1 :</h7>
+            </div>
+    
+            <div class = "col-4">
+                {{form.cptcodeOther1|as_crispy_field}}
+            </div>
+    
+            <div class = "col-md-2 ms-auto">
+                <h7>Unit 1:</h7>
+            </div>
+            <div class ="col-2">
+            {{form.unit1|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class ="row">
+            <div class ="col-2">
+                <h7>Modifiers 1:</h7>
+            </div>
+            <div class ="col-2">
+                {{form.modifiers1|as_crispy_field}}
+            </div>
+            <div class = "col-md-2 ms-auto">
+                <h7>Modifiers 2:</h7>
+            </div>
+            <div class ="col-2">
+            {{form.modifiers2|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class ="row">
+            <div class ="col-2">
+                <h7>Modifiers Other 1:</h7>
+            </div>
+            <div class ="col-2">
+                {{form.modifiersOther1|as_crispy_field}}
+            </div>
+            <div class = "col-md-2 ms-auto">
+                <h7>Modifiers Other2:</h7>
+            </div>
+            <div class ="col-2">
+            {{form.modifiersOther2|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <h6>MIPS</h6>
+        <br>
+        <h6>Body Mass Index (BMI) Screening and Follow-Up Plan (128)</h6>
+        <h7>Age Limit: 18 and older</h7>
+        {{form.bmiScreening|as_crispy_field}}
+        <br>
+        {{form.detailsAndExpInformation|as_crispy_field}}
+        <!--Documentation of current  medication medical record-->
+        <br>
+        <h6>Documentation of Current Medications in the Medical Record (130)</h6>
+        <h7>Age Limit: 18 and older</h7>
+        {{form.documentationOfCurrentMedicalRecord|as_crispy_field}}
+        <br>
+        {{form.detailsAndExpInformation2|as_crispy_field}}
+
+        <!--Screening for Depression and Follow-Up Plan-->
+        <br>
+        <h6>Screening for Depression and Follow-Up Plan (134)</h6>
+        <h7>Age Limit: 18 and older</h7>
+        {{form.screeningForDepresionAndFollowUp|as_crispy_field}}
+        <br>
+        {{form.detailsAndExpInformation3|as_crispy_field}}
+        
+        <!--Elder Maltreatment Screen and Follow-Up Plan (181)-->
+        <br>
+        <h6>Elder Maltreatment Screen and Follow-Up Plan (181)</h6>
+        <h7>Age Limit: 18 and older</h7>
+        {{form.elderMaltreatementScreenFollowup|as_crispy_field}}
+        <br>
+        {{form.detailsAndExpInformation4|as_crispy_field}}
+        
+        <!--Tobacco Use: Screening and Cessation Intervention (226)-->
+        <br>
+        <h6>Tobacco Use: Screening and Cessation Intervention (226)</h6>
+        <h7>Age Limit: 18 and older</h7>
+        {{form.tobaccoUseScreeningAndCessation|as_crispy_field}}
+        <br>
+        {{form.detailsAndExpInformation5|as_crispy_field}}
+        
+        <!--Screening for High Blood Pressure and Follow-Up Documented (317)-->
+        <br>
+        <h6>Screening for High Blood Pressure and Follow-Up Documented (317)</h6>
+        <h7>Age Limit: 18 and older</h7>
+        {{form.highBloddPressureScreening|as_crispy_field}}
+        <br>
+        {{form.detailsAndExpInformation6|as_crispy_field}}
+
+        <!--Unhealthy Alcohol Use: Screening & Brief Counseling (431)-->
+        <br>
+        <h6>Unhealthy Alcohol Use: Screening & Brief Counseling (431)</h6>
+        <h7>Age Limit: 18 and older</h7>
+        {{form.unhealthyAlcoholUseScrrening|as_crispy_field}}
+        <br>
+        {{form.detailsAndExpInformation7|as_crispy_field}}
+        <br>
+
+        {{form.commentsToBillers|as_crispy_field}}
+        
+
+    </div>
+    <br>
+    <br>
+    
+    <button type="submit" class="btn btn-primary"> 
+                    
+        SUBMIT &nbsp; <i class="fa fa-check" aria-hidden="true"></i>
+
+    </button>
+
+    &nbsp;
+
+    <a href="{% url 'dashboard' %}" class="btn btn-secondary"> 
+
+
+        Return &nbsp; <i class="fa fa-arrow-left" aria-hidden="true"></i>
+
+    </a>
+
+    </div>
+
+    
+</form>
+
+
+
+
+    {% endblock %}

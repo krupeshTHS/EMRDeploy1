@@ -1,0 +1,511 @@
+{% extends 'webapp/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h3>Psychiatric Progress Note</h3>
+<form method="POST" autocomplete="off">
+
+    {% csrf_token %}
+    <div class="container bg-light shadow-md p-5">
+        <div class = "row">
+            <div class ="col-6">
+                {{form.letterhead|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class = "row">
+            <div class = "col-2">
+                {{form.clientName|as_crispy_field}}
+            </div>    
+            <div class ="col-2">
+                {{form.appointmentDate|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.pos|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class = "row">
+            <div class ="col-6">
+                {{form.appointmentMode|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class = "row">
+            <div class ="col-6">
+                {{form.appointmenttype|as_crispy_field}}
+            </div>
+            <div class ="col-6">
+                {{form.dateOfNextPlan|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class = "row">
+            <div class  ="col-1">
+                {{form.timeStart|as_crispy_field}}
+            </div>
+            <div class = "col-1">
+            {{form.timeEnd|as_crispy_field}}
+            </div> 
+        </div>
+        <br>
+        {{form.statementOfProgress|as_crispy_field}}
+        <br>
+        <div class ="row">
+            <div class  ="col-3">
+                <h5>Current medications prescribed</h5>
+            </div>
+            <div class ="col-1">
+                {{form.currentMedicationPrescribedNA|as_crispy_field}}
+            </div>  
+        </div>
+        {{form.currentMedicationPrescribed|as_crispy_field}}
+        <br>
+        <div class ="row">
+            <div class  ="col-5">
+                <h5>Documentation of changes in medication and reason for change</h5>
+            </div>
+            <div class ="col-1">
+                {{form.documentationOfChangesNA|as_crispy_field}}
+            </div>  
+        </div>
+        {{form.documentationOfChanges|as_crispy_field}}
+        <br>
+        <div class ="row">
+            <div class  ="col-5">
+                <h5>Issues needing to be addressed</h5>
+            </div>
+            <div class ="col-1">
+                {{form.issuesNeedingtobeaddressedNA|as_crispy_field}}
+            </div>  
+        </div>
+        {{form.issuesNeedingtobeaddressed|as_crispy_field}}
+        <br>
+        {{form.labStudiesOrdered|as_crispy_field}}
+        <br>
+        <div class ="row">
+            <div class  ="col-5">
+                <h5>Medication Education Questions And Answers</h5>
+            </div>
+            <div class ="col-1">
+                {{form.medicationEducationNA|as_crispy_field}}
+            </div>  
+        </div>    
+        {{form.medicationEducation|as_crispy_field}}
+        <br>
+        {{form.atypicalmedication|as_crispy_field}}
+        <br>
+        <br>
+        <br>
+        <div class ="row">
+            <div class ="col-2">
+                <h6>Appearance:</h6>
+            </div>
+            <div class ="col-2">
+                {{form.appearanceWellGroomed|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.appearanceUnkempt|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.appearanceBizarreCombinations|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.appearanceUnableToAssessAppointmentDoneViaPhone|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class ="row">
+            <div class ="col-2">
+                <h6>Appearance:</h6>
+            </div>
+            <div class ="col-2">
+                {{form.appearanceWellGroomed|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.appearanceUnkempt|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.appearanceBizarreCombinations|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.appearanceUnableToAssessAppointmentDoneViaPhone|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class ="row">
+            <div class ="col-2">
+                <h6>Behavior:</h6>
+            </div>
+            <div class ="col-2">
+                {{form.behaviorCooperative|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.behaviorThreatening|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.behaviorSuspicious|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.behaviorUncooperative|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.behaviorHyperactive|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.behaviorPooeAttention|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class ="row">
+            <div class ="col-2">
+                <h6>Speech:</h6>
+            </div>
+            <div class ="col-2">
+                {{form.speechNormal|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.speechPressured|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.speechLoud|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.speechSoft|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.speechRambling|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.speechIncoherent|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class ="row">
+            <div class ="col-2">
+                <h6>Speech:</h6>
+            </div>
+            <div class ="col-2">
+                {{form.speechNormal|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.speechPressured|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.speechLoud|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.speechSoft|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.speechRambling|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.speechIncoherent|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class ="row">
+            <div class ="col-2">
+                <h6>Mood:</h6>
+            </div>
+            <div class ="col-2">
+                {{form.moodNormal|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.moodDepressed|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.moodAnxious|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.moodAngry|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.moodElated|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.moodIrritable|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class ="row">
+            <div class ="col-2">
+                <h6>Affect:</h6>
+            </div>
+            <div class ="col-2">
+                {{form.affectAppropriate|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.affectFull|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.affectInappropriate|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.affectConstricted|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.affectBlunted|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.affectFlat|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class ="row">
+            <div class ="col-2">
+                <h6>Thought:</h6>
+            </div>
+            <div class ="col-2">
+                {{form.thoughtGoalDirected|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.thoughtLogical|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.thoughtDelusions|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.thoughtCircumstantial|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.thoughtObsessions|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.thoughtConcrete|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.thoughtLoose|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.thoughtHallucination|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class ="row">
+            <div class ="col-2">
+                <h6>Ideation:</h6>
+            </div>
+            <div class ="col-2">
+                {{form.ideationSuicidal|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.ideationDenies|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                <h6>If present describe:</h6>
+            </div>
+            <div class ="col-3">
+                {{form.ideationSuicidalifPresentDescibe|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class ="row">
+            <div class ="col-2">
+                <h6>Client to return in:</h6>
+            </div>
+            <div class ="col-2">
+                {{form.ideation1Week|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.ideation2week|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.ideation4weeks|as_crispy_field}}
+            </div>
+            <div class ="col-1">
+                {{form.ideation1month|as_crispy_field}}
+            </div>
+            <div class ="col-1">
+                {{form.ideation2months|as_crispy_field}}
+            </div>
+            <div class="col-1">
+                {{form.ideation3monts|as_crispy_field}}
+            </div>
+            <div class="col-1">
+                {{form.ideationother|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class ="row">
+            <div class ="col-2">
+                <h6>Clinical Disorder:</h6>
+            </div>
+            <div class ="col-2">
+                {{form.icdcode|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class ="col-2">
+                 <h6>Other ICD Diagnosis</h6>
+            </div>
+            <div class ="col-2">
+                {{form.otherICDCode|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        {{form.generalMedicalConditions|as_crispy_field}}
+        <br>
+        <div class ="row">
+            <div class ="col-5">
+                <h6>Personality Disorder/Mental Retardation</h6>
+            </div>
+            <div class="col-4">
+                {{form.personalityDisorderMentalRetardation|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        {{form.otherpersonalDiagnosis|as_crispy_field}}
+        <h5>CPT Codes</h5>
+        <h5>Procedural Coding</h5>
+    
+        <br>
+        <div class = "row">
+            <div class = "col-2">
+                <h7>CPT Code 1 :</h7>
+            </div>
+    
+            <div class = "col-7">
+                {{form.cptcode1|as_crispy_field}}
+            </div> 
+        </div>
+        <br>
+        <div class = "row">
+            <div class = "col-2">
+                <h7>CPT Code Other 1 :</h7>
+            </div>
+    
+            <div class = "col-4">
+                {{form.cptcodeother1|as_crispy_field}}
+            </div>
+    
+            <div class = "col-md-2 ms-auto">
+                <h7>Unit 1:</h7>
+            </div>
+            <div class ="col-2">
+            {{form.unit1|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class ="row">
+            <div class ="col-2">
+                <h7>Modifiers 1:</h7>
+            </div>
+            <div class ="col-2">
+                {{form.modifiers1|as_crispy_field}}
+            </div>
+            <div class = "col-md-2 ms-auto">
+                <h7>Modifiers 2:</h7>
+            </div>
+            <div class ="col-2">
+            {{form.modifiers2|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class ="row">
+            <div class ="col-2">
+                <h7>Modifiers Other 1:</h7>
+            </div>
+            <div class ="col-2">
+                {{form.modifiersOther1|as_crispy_field}}
+            </div>
+            <div class = "col-md-2 ms-auto">
+                <h7>Modifiers Other2:</h7>
+            </div>
+            <div class ="col-2">
+            {{form.modifiersOther2|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class = "row">
+            <div class = "col-2">
+                <h7>CPT Code 2 :</h7>
+            </div>
+    
+            <div class = "col-7">
+                {{form.cptcode2|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class = "row">
+            <div class = "col-2">
+                <h7>CPT Code Other 2 :</h7>
+            </div>
+    
+            <div class = "col-4">
+                {{form.cptcodeOther2|as_crispy_field}}
+            </div>
+    
+            <div class = "col-md-2 ms-auto">
+                <h7>Unit 2:</h7>
+            </div>
+            <div class ="col-2">
+            {{form.unit2|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class ="row">
+            <div class ="col-2">
+                <h7>Modifiers 1:</h7>
+            </div>
+            <div class ="col-2">
+                {{form.modefiers3|as_crispy_field}}
+            </div>
+            <div class = "col-md-2 ms-auto">
+                <h7>Modifiers 2:</h7>
+            </div>
+            <div class ="col-2">
+            {{form.modefiers4|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class ="row">
+            <div class ="col-2">
+                <h7>Modifiers Other 1:</h7>
+            </div>
+            <div class ="col-2">
+                {{form.modefiersOther3|as_crispy_field}}
+            </div>
+            <div class = "col-md-2 ms-auto">
+                <h7>Modifiers Other2:</h7>
+            </div>
+            <div class ="col-2">
+            {{form.modefiersOther4|as_crispy_field}}
+            </div>
+        </div>
+
+        
+        
+    <br>
+    <br>
+    
+    <button type="submit" class="btn btn-primary"> 
+                    
+        SUBMIT &nbsp; <i class="fa fa-check" aria-hidden="true"></i>
+
+    </button>
+
+    &nbsp;
+
+    <a href="{% url 'dashboard' %}" class="btn btn-secondary"> 
+
+
+        Return &nbsp; <i class="fa fa-arrow-left" aria-hidden="true"></i>
+
+    </a>
+
+    </div>
+
+    
+</form>
+
+
+
+
+    {% endblock %}
+

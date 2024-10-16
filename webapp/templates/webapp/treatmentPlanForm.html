@@ -1,0 +1,243 @@
+{% extends 'webapp/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h3>Treatment Plan</h3>
+<form method="POST" autocomplete="off">
+
+    {% csrf_token %}
+    <div class="container bg-light shadow-md p-5">
+        <div class = "row">
+            <div class ="col-6">
+                {{form.letterhead|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class = "row">
+            <div class = "col-2">
+            {{form.dateOfAppointment|as_crispy_field}}
+            </div>    
+            <div class ="col-2">
+                {{form.time_in|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.time_out|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <h6>Treatment Frequency</h6>
+
+        <div class ="row">
+            <div class ="col-2">
+                {{form.individualTreatmentPlan|as_crispy_field}}
+            </div>
+            <div class = "col-1">
+                {{form.treatmentFrequencyIndividual|as_crispy_field}}
+            </div>
+
+            <div class = "col-1">
+                <h7>Per:</h7>
+            </div>
+            <div class ="col-1">
+                {{form.treatmentIndividualDays|as_crispy_field}}
+            </div>
+            <div class ="col-1">
+                {{form.groupTreatmentPlan|as_crispy_field}}
+            </div>
+            <div class ="col-1">
+                {{form.groupFrequency|as_crispy_field}}
+            </div>
+            <div class="col-1">
+                <h7>Per:</h7>
+            </div>
+            <div class ="col-1">
+                {{form.groupDays|as_crispy_field}}
+            </div>            
+        </div>
+        <br>
+        <div class="row">
+            <div class ="col-4">
+                <h7>Estimated Number of Sessions to Achieve Objectives:</h7>
+            </div>
+            <div class = "col-1">
+                {{form.numberOfSessionsToAcheieveObjectives|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <h5> Treatment Plan </h5>
+        <div class ="row">
+            <div class= "col-2">
+                <h7>Start Date 1:</h7>
+            </div>
+            <div class ="col-2">
+                {{form.treatmentPlanStartDate1|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                <h7>Review Date 1:</h7>
+            </div>
+            <div class = "col-2">
+                {{form.treatmentPlanReviewDate1|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class ="row">
+            <div class ="col-2">
+                {{form.treatmentPlanNew|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.treatmentPlanContinue|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.treatmentPlanDefer|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.treatmentPlanAchieve|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        {{form.currentGoalObjectives1|as_crispy_field}}
+        <br>
+        {{form.progess1|as_crispy_field}}
+        <br>
+        {{form.updatedGoalobjectives1|as_crispy_field}}
+        <br>
+        <div class ="row">
+            <div class= "col-2">
+                <h7>Start Date 2:</h7>
+            </div>
+            <div class ="col-2">
+                {{form.treatmentPlanStartDate2|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                <h7>Review Date 2:</h7>
+            </div>
+            <div class = "col-2">
+                {{form.treatmentPlanReviewDate2|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class ="row">
+            <div class ="col-2">
+                {{form.treatmentPlanNew2|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.treatmentPlanContinue2|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.treatmentPlanDefer2|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.treatmentPlanAchieve2|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        {{form.currentGoalObjectives2|as_crispy_field}}
+        <br>
+        {{form.progess2|as_crispy_field}}
+        <br>
+        {{form.updatedGoalobjectives2|as_crispy_field}}
+        <br>
+        <div class ="row">
+            <div class= "col-2">
+                <h7>Start Date 3:</h7>
+            </div>
+            <div class ="col-2">
+                {{form.treatmentPlanStartDate3|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                <h7>Review Date 3:</h7>
+            </div>
+            <div class = "col-2">
+                {{form.treatmentPlanReviewDate3|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class ="row">
+            <div class ="col-2">
+                {{form.treatmentPlanNew3|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.treatmentPlanContinue3|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.treatmentPlanDefer3|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.treatmentPlanAchieve3|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        {{form.currentGoalObjectives3|as_crispy_field}}
+        <br>
+        {{form.progess3|as_crispy_field}}
+        <br>
+        {{form.updatedGoalobjectives3|as_crispy_field}}
+        <br>
+        <div class ="row">
+            <div class= "col-2">
+                <h7>Start Date 4:</h7>
+            </div>
+            <div class ="col-2">
+                {{form.treatmentPlanStartDate4|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                <h7>Review Date 4:</h7>
+            </div>
+            <div class = "col-2">
+                {{form.treatmentPlanReviewDate4|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        <div class ="row">
+            <div class ="col-2">
+                {{form.treatmentPlanNew4|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.treatmentPlanContinue4|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.treatmentPlanDefer4|as_crispy_field}}
+            </div>
+            <div class ="col-2">
+                {{form.treatmentPlanAchieve4|as_crispy_field}}
+            </div>
+        </div>
+        <br>
+        {{form.currentGoalObjectives4|as_crispy_field}}
+        <br>
+        {{form.progess4|as_crispy_field}}
+        <br>
+        {{form.updatedGoalobjectives4|as_crispy_field}}
+        <br>
+        {{form.clinicalDisorders|as_crispy_field}}
+        <br>
+        {{form.otherDiagnosis|as_crispy_field}}
+        <br>
+        {{form.comments|as_crispy_field}}
+        <br>
+        <div class ="row">
+            <div class ="col-2">
+                {{form.therapistSignDate|as_crispy_field}}
+            </div>
+        </div>
+           
+    </div>
+    <br>
+
+    <button type="submit" class="btn btn-primary"> 
+                    
+        SUBMIT &nbsp; <i class="fa fa-check" aria-hidden="true"></i>
+
+    </button>
+
+    &nbsp;
+
+    <a href="{% url 'dashboard' %}" class="btn btn-secondary"> 
+
+
+        Return &nbsp; <i class="fa fa-arrow-left" aria-hidden="true"></i>
+
+    </a>
+</form>
+
+{% endblock %}

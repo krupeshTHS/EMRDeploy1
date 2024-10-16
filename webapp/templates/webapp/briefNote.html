@@ -1,0 +1,90 @@
+{% extends 'webapp/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h3>Brief Note</h3>
+<form method="POST" autocomplete="off">
+
+    {% csrf_token %}
+
+    <div class = "row">
+        <div class ="col-6">
+            {{form.letterhead|as_crispy_field}}
+        </div>
+    </div>
+
+    <br>
+    <h4>Nature of Contact:</h4>
+    <div class = "row">
+        <div class = "col-2">
+        {{form.natureofContactOutForAppointment|as_crispy_field}}
+        </div>    
+        <div class ="col-2">
+        {{form.natureofContactRefused1stAttempt|as_crispy_field}}
+        </div>
+        <div class ="col-2">
+        {{form.natureofContactrefused2ndAttempt|as_crispy_field}}
+        </div>
+        <div class ="col-2">
+            {{form.natureofContactrefused3rdAttempt|as_crispy_field}}
+        </div>
+        <div class ="col-2">
+            {{form.natureofContactInthHospital|as_crispy_field}}
+        </div>
+        <div class ="col-2">
+            {{form.natureofContactInRehab|as_crispy_field}}
+        </div>
+    </div>
+    <br>
+    <div class = "row">
+        <div class = "col-2">
+        {{form.natureofContactQuickDeEscalation|as_crispy_field}}
+        </div>    
+        <div class ="col-2">
+        {{form.natureofContactBriefCheckIn|as_crispy_field}}
+        </div>
+        <div class ="col-2">
+        {{form.natureofContactFamilyVisitingUnableTosee|as_crispy_field}}
+        </div>
+        <div class ="col-2">
+            {{form.natureofContactOutOfFacilityOnOuting|as_crispy_field}}
+        </div>
+        <div class ="col-2">
+            {{form.natureofContactOnvacation|as_crispy_field}}
+        </div>
+        <div class ="col-2">
+            {{form.natureofContactBreifUpdateOnPatientForFacility|as_crispy_field}}
+        </div>
+    </div>
+    <br>
+    <div class = "row">
+        <div class = "col-2">
+        {{form.natureofContactCalledClientLeftVoicemail|as_crispy_field}}
+        </div>    
+        <div class ="col-2">
+        {{form.natureofContactRescheduleSeesion|as_crispy_field}}
+        </div>
+        <div class ="col-2">
+        {{form.natureContactUnableToReschedule|as_crispy_field}}
+        </div>
+        <div class ="col-2">
+            {{form.natureCotactClientGuardianCalledTheOffice|as_crispy_field}}
+        </div>
+        <div class ="col-2">
+            {{form.natureofContactOther|as_crispy_field}}
+        </div>
+    </div>
+    <br>
+    {{form.otherAdditionalInformation|as_crispy_field}}
+    <br>
+    <div class = "row">
+       <div class = "col-2">
+        {{form.therapistSignDate|as_crispy_field}}
+       </div> 
+    </div>
+    <br>
+
+</form>
+
+
+  {% endblock %}

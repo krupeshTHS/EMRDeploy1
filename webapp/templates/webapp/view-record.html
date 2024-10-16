@@ -1,0 +1,107 @@
+{% extends 'webapp/base.html' %}
+
+{% block content %}
+
+<a class="btn btn-outline-primary btn-sm" href="{% url 'create-record' %}">
+
+    Create a new record &nbsp; <i class="fa fa-plus-circle" aria-hidden="true"></i>
+
+</a>
+
+<a class="btn btn-outline-primary btn-sm" href="{% url 'appointmentSession' %}">
+
+    Appointments &nbsp; <i class="fa fa-plus-circle" aria-hidden="true"></i>
+
+</a>
+
+<a class="btn btn-outline-primary btn-sm" href="{% url 'record' record.id %}"> Appointment Sesssion </a>
+    <div class="card">
+
+
+        <div class="card-body">
+
+            <i class="fa fa-user-circle-o" aria-hidden="true"></i> &nbsp;
+
+            <strong>   
+
+                {{record.last_name|upper}}
+    
+                {{record.first_name}}
+    
+            </strong>
+    
+            <hr> 
+
+            <p> <strong> ID: </strong> {{record.id}} </p>
+
+            <p> <strong> DOB: </strong> {{record.dob}} </p>
+
+            <p> <strong> SEX: </strong> {{record.sex}} </p>
+
+            <p> <strong> FACILITY NAME: </strong> {{record.facility_name}} </p>
+
+            <p> <strong> PRIMARY INSURANCE NAME: </strong> {{record.primary_insurance_name}} </p>
+
+            <p> <strong> PRIMARY INSURANCE ID: </strong> {{record.primary_insurance}} </p>
+
+            <p> <strong> SECONDARY INSURANCE: </strong> {{record.secondary_insurance}} </p>
+
+            <p> <strong> REFERRED BY: </strong> {{record.referred_by}} </p>
+
+            <p> <strong> ELIGIBILITY STATUS: </strong> {{record.eligibility_status}} </p>
+
+            <p> <strong> COPAY: </strong> {{record.copay}} </p>
+
+            <p> <strong> DED: </strong> {{record.ded}} </p>
+
+            <p> <strong> CO-INSURANCE: </strong> {{record.coinsurance}} </p>
+
+            <p> <strong> ELIGIBILTY COMMENTS: </strong> {{record.eligibility_comments}} </p>
+
+            <p> <strong> ELIGIBILITY RUNDATE: </strong> {{record.eligibility_rundate}} </p>
+
+            <p> <strong> TALK THERAPY ASSIGNEE: </strong> {{record.talk_therapy_doc_name}} </p>
+
+            <p> <strong> MED MANAGEMENT ASSIGNEE: </strong> {{record.med_management_doc_name}} </p>
+
+            <p> <strong> ASSIGN DATE: </strong> {{record.assign_data}} </p>
+            
+            <p> <strong> ADDITIONAL NOTES: </strong> {{record.additional_notes}} </p>
+
+            <br>
+
+            <p> <strong> RESPONSIBLE PARTY NAME: </strong> {{record.responsible_party_name}} </p>
+
+            <p> <strong> RESPONSIBLE PARTY RELATIONSHIP: </strong> {{record.responsible_party_relationaship}} </p>
+
+            <p> <strong> RESPONSIBLE PARTY NUMBER: </strong> {{record.responsible_party_Number}} </p>
+
+            <p> <strong> RESPONSIBLE PARTY EMAIL: </strong> {{record.responsible_party_Email}} </p>
+
+            <p> <strong> PHARMACY INFORMATION: </strong> {{record.pharmacy_information}} </p>
+
+            <p> <strong> DIAGNOSIS INFORMATION: </strong> {{record.diagnosis_information}} </p>
+            
+            <p> <strong> Creation date: </strong> {{record.creation_date}} </p>
+
+
+        </div>
+
+
+    </div>
+
+    <br>
+
+    <a href="{% url 'dashboard' %}" class="btn btn-secondary"> Return &nbsp; <i class="fa fa-arrow-left" aria-hidden="true"></i> </a>
+
+    &nbsp;
+
+    <a href="{% url 'update-record' record.id %}" class="btn btn-info"> Update record &nbsp; <i class="fa fa-plus" aria-hidden="true"></i> </a>
+
+    &nbsp;
+
+    <a href="{% url 'delete-record' record.id %}" class="btn btn-danger"> Delete &nbsp;<i class="fa fa-minus-square" aria-hidden="true"></i> </a>
+
+
+{% endblock %}
+

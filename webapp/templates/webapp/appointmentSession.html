@@ -1,0 +1,21 @@
+{% extends 'webapp/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h3>Appointment Session</h3>
+
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Forms
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="{% url 'childform' %}">Child and Adolescent Pyschiatric Evaluation</a>
+      <a class="dropdown-item" href="{% url 'briefNote' %}">Brief Note</a>
+      <a class="dropdown-item" href="{% url 'initialVisitsForm' %}">Initial Visits</a>
+      <a class="dropdown-item" href="{% url 'progressNote' %}">THS Progress Note</a>
+      <a class="dropdown-item" href="{% url 'treatmentPlanForm' %}">Treatment Plan Form</a>
+      <a class="dropdown-item" href="{% url 'intialPsychiatricEvaluationAdultForm'%}">Initial Psychiatric Evaluation - Adult</a>
+      <a class="dropdown-item" href="{% url 'psychiatricProgressNote'%}">Psychiatric Progress Note</a>
+    </div>
+  </div>
+  {% endblock %}

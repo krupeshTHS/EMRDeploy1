@@ -1,0 +1,155 @@
+{% extends 'webapp/base.html' %}
+
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+<body>
+
+    <div class="container bg-light shadow-md p-5 form-layout">
+
+        <h3> Update record </h3>
+
+        <h6> Update your record down below. </h6>
+
+        <hr>
+        <br>
+
+        <form method="POST" autocomplete="off">
+
+            {% csrf_token %}
+
+            {{form.first_name|as_crispy_field}}
+
+            <br>
+
+            {{form.last_name|as_crispy_field}}
+
+            <br>
+
+            {{form.ssn|as_crispy_field}}
+
+            <br>
+
+
+            {{form.dob|as_crispy_field}}
+
+            <br>
+
+            {{form.facility_name|as_crispy_field}}
+
+            <br>
+
+            {{form.sex|as_crispy_field}}
+
+            <br>
+
+            {{form.status|as_crispy_field}}
+
+            <br>
+
+            {{form.primary_insurance_name|as_crispy_field}} 
+
+            <br>
+
+            {{form.primary_insurance|as_crispy_field}}
+
+            <br>
+
+            {{form.secondary_insurance|as_crispy_field}}
+
+            <br>
+
+            {{form.referred_by|as_crispy_field}}
+
+            <br>
+                            
+            {{form.eligibility_status|as_crispy_field}}
+
+            <br>
+
+            {{form.copay|as_crispy_field}}
+
+            <br>
+
+            {{form.coinsurance|as_crispy_field}}
+
+            <br>
+
+            {{form.eligibility_comments |as_crispy_field}}
+
+            <br>
+
+            {{form.eligibility_rundate |as_crispy_field}}
+
+            <br>
+
+            {{form.talk_therapy_doc_name |as_crispy_field}}
+
+            <br>
+
+            {{form.med_management_doc_name |as_crispy_field}}
+
+            <br>
+
+            {{form.assign_date |as_crispy_field}}
+
+            <br>
+
+            {{form.additional_notes |as_crispy_field}}
+
+            <br>
+
+            {{form.responsible_party_name|as_crispy_field}}
+
+            <br>
+
+            {{form.responsible_party_relationaship|as_crispy_field}}    
+
+            <br>
+
+            {{form.responsible_party_Number|as_crispy_field}}
+
+            <br>
+
+
+            {{form.responsible_party_Email|as_crispy_field}}
+
+            <br>
+
+
+            {{form.pharmacy_information|as_crispy_field}}
+
+            <br>
+
+            {{form.diagnosis_information|as_crispy_field}}
+
+            <br>
+
+            <button type="submit" class="btn btn-info"> 
+                
+                Update record &nbsp; <i class="fa fa-plus" aria-hidden="true"></i>
+            
+            </button>
+
+            &nbsp; 
+            
+            <a href="{% url 'dashboard' %}" class="btn btn-secondary"> 
+
+
+                Return &nbsp; <i class="fa fa-arrow-left" aria-hidden="true"></i>
+
+            </a>
+
+
+        </form>
+
+    </div>
+
+    <br>
+
+</body>
+
+
+{% endblock %}
